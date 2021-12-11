@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>calculator</title>
+</head>
+
+<body>
+    <div class="container">
+        <table>
+            <form name="formcal">
+                <tr>
+                    <td colspan="4">
+                        <input type="text" name="output" id="screen">
+                    </td>
+                </tr>
+                <tr>
+                    <td> <input type="button" value="Clear" class="button" disabled id="btn15" onclick="formcal.output.value =''"></td>
+                </tr>
+                <tr>
+                    <td> <input type="button" value="9" class="button" disabled id="btn0" onclick="formcal.output.value +='9'"></td>
+                    <td> <input type="button" value="8" class="button" disabled id="btn1" onclick="formcal.output.value +='8'"></td>
+                    <td><input type="button" value="7" class="button" disabled id="btn2" onclick="formcal.output.value +='7'"> </td>
+                    <td> <input type="button" value="/" class="button" disabled id="btn3"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="6" class="button" disabled id="btn4" onclick="formcal.output.value +=6"> </td>
+                    <td> <input type="button" value="5" class="button" disabled id="btn5" onclick="formcal.output.value +='5'"></td>
+                    <td> <input type="button" value="4" class="button" disabled id="btn6" onclick="formcal.output.value +='4'"></td>
+                    <td> <input type="button" value="*" class="button" disabled id="btn7" onclick="formcal.output.value +='*'"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="3" class="button" disabled id="btn8" onclick="formcal.output.value +='3'"> </td>
+                    <td><input type="button" value="2" class="button" disabled id="btn9" onclick="formcal.output.value +='2'"> </td>
+                    <td><input type="button" value="1" class="button" disabled id="btn10" onclick="formcal.output.value +='1'"> </td>
+                    <td> <input type="button" value="-" class="button" disabled id="btn11" onclick="formcal.output.value +='-'"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="0" class="button" disabled id="btn12" onclick="formcal.output.value +='0'"> </td>
+                    <td> <input type="button" value="+" class="button" disabled id="btn13" onclick="formcal.output.value +='+'"> </td>
+                    <td>
+                        <input type="button" value="=" class="button" disabled id="btn14" onclick="formcal.output.value =eval(formcal.output.value)"></td>
+                    <td> <input type="button" value="ON" id="onBtn" class="button" onclick="disableButton(this.value)" style="background: red;"></td>
+                </tr>
+
+            </form>
+        </table>
+    </div>
+    <script>
+        function disableButton(btn) {
+            //alert(btn)
+
+            if (btn == "ON") {
+
+                for (var i = 0; i <= 15; i++) {
+                    document.getElementById("btn" + i).disabled = false;
+                    //document.querySelector("#btn" + i).disabled = false;
+                    document.getElementById("onBtn").value = "OFF";
+                    document.getElementById("onBtn").style = ("background: green;");
+                    document.getElementById("screen").value = 0;
+                }
+
+            } else {
+                for (var i = 0; i <= 15; i++) {
+                    document.getElementById("btn" + i).disabled = true;
+                    //document.querySelector("#btn" + i).disabled = false;
+                    document.getElementById("onBtn").value = "ON";
+                    document.getElementById("onBtn").style = ("background: red;");
+                    document.getElementById("screen").value = "";
+                }
+            }
+        }
+
+
+
+
+
+        // var FirstScreenValue, SecondScreenValue, operator, thisOperator;
+
+        // function display(numValue) {
+        //     var scr = document.getElementById("screen ");
+
+        //     if (scr.value == " ") {
+        //         scr.value = numValue;
+        //     } else {
+        //         scr.value += numValue;
+        //     }
+
+        // }
+
+        // function arithmetic(op) {
+        //     var scr = document.getElementById("screen ");
+        // alert(scr.value);
+        //     FirstScreenValue = scr.value;
+        //     scr.value = " ";
+        // }
+
+        // function result() {
+        //     arithmetic(op);
+        //     var scr = document.getElementById("screen ");
+        //     SecondScreenValue = scr.value;
+        // console.log(SecondScreenValue);
+        //     if (op == "+ ") {
+        //         var result = FirstScreenValue + SecondScreenValue;
+        //         document.getElementById("screen ").innerHTML = result;
+        //     }
+        // }
+    </script>
+
+</body>
+
+</html>

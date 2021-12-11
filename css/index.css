@@ -1,0 +1,45 @@
+body {
+    background-color: gray;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+table {
+    margin-top: 150px;
+    width: 100%;
+    max-width: 400px;
+    height: 350px;
+    background-color: black;
+    border-radius: 5px;
+}
+
+#screen {
+    margin: 5px;
+    margin-left: 9px;
+    height: 40px;
+    width: 100%;
+    max-width: 365px;
+    border: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    outline: none;
+}
+
+.button {
+    margin-left: 17px;
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+}
+
+.button:hover {
+    background-color: gray;
+}
